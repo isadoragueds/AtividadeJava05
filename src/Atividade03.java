@@ -6,13 +6,14 @@ public class Atividade03 {
         var input = new Scanner(System.in);
         int[] codigoProduto = new int[10];
         int[] estoqueProduto = new int[10];
-        int codeCliente = 0, codigoProdutoDesejado, qtdProdutoDesejado, indiceProduto;
+        int codigoProdutoDesejado, qtdProdutoDesejado, indiceProduto;
 
         for (int i = 0; i < 10; i++) {
-            System.out.print("Informe o codigo do produto: ");
+            
+            System.out.print("Informe o " +(i +i)+ "codigo do produto: ");
             codigoProduto[i] = input.nextInt();
-            System.out.print("Informe o estoque do produto: ");
-            codigoProduto[i] = input.nextInt();
+            System.out.print("Informe o estoque do produto de codigo(" +codigoProduto[i]+ "):");
+            estoqueProduto[i] = input.nextInt();
 
         }
 
