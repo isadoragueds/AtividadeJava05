@@ -18,6 +18,7 @@ public class Atividade16 {
             produtos[i] = input.nextLine();
             System.out.print("Preço do produto " + produtos[i] + ": R$");
             precoProduto[i] = input.nextDouble();
+            input.nextLine();
 
 
             if (precoProduto[i] < 50.0) {
