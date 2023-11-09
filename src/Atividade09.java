@@ -18,6 +18,7 @@ public class Atividade09 {
             codigoProduto[i] = input.nextInt();
             System.out.print("Informe o preço: R$");
             precoProduto[i] = input.nextDouble();
+            input.nextLine();
 
         }
 
