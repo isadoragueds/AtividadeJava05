@@ -15,9 +15,11 @@ public class Atividade08 {
         System.out.println("Informe a media do aluno");
         for (int i = 0; i < 7; i ++) {
             System.out.println("Informe o " +(i + 1) +"º nome: ");
-            System.out.println("Informe a " +(i + 1) +"º media: ");
             nome[i] = input.nextLine();
+            
+            System.out.println("Informe a " +(i + 1) +"º media: ");
             medias[i] = input.nextDouble();
+            input.nextLine();
         }
 
         for (int i = 1; i < 7; i++) {
