@@ -2,57 +2,52 @@ import java.util.Scanner;
 
 public class Atividade10 {
     public static void main(String[] args) {
+
+        int[] vetor1 = new int[10];
+        int[] vetor2 = new int[5];
+
         var input = new Scanner(System.in);
+        System.out.println("Digite 10 números inteiros para o primeiro vetor:");
+            for (int i = 0; i < vetor1.length; i++) {
+                System.out.print("Informe o " +(i + 1) + "º número: ");
+                vetor1[i] = input.nextInt();
+            }
 
+        System.out.println("Digite 5 números inteiros para o segundo vetor:");
+            for (int i = 0; i < vetor2.length; i++) {
+                System.out.print("Informe o " +(i + 1) + "º número: ");
+                vetor2[i] = input.nextInt();
+            }
 
-        int[] vetor01 = new int[10];
-        System.out.println("Informe o primeiro vetor: ");
-        for (int i = 0; i < vetor01.length; i++) {
-            System.out.print("Informe o " +(i + 1)+ " numero: ");
-            vetor01[i] = input.nextInt();
-        }
-
-        System.out.println("\n");
-
-        int[] vetor02 = new int[5];
-        System.out.println("Informe o segundo vetor: ");
-        for (int i = 0; i < vetor02.length; i++) {
-            System.out.print("Informe o " +(i + 1)+ " numero: ");
-            vetor02[i] = input.nextInt();
-        }
-
-        int[] resultado = new int[vetor01.length];
-                for (int i = 0;i < vetor01.length; i++) {
-                    resultado[i] = 0;
-                    if (vetor01[i] % 2 == 0) {
-                        for (int j = 0; i < vetor02.length; i++) {
-                            resultado[i] += vetor01[i] + vetor02[i];
-                        }
+        int[] resultado02 = new int[vetor1.length];
+            for (int i = 0; i < vetor1.length; i++) {
+                if (vetor1[i] % 2 == 0) {
+                    for (int j = 0; j < vetor2.length; j++) {
+                        resultado02[i] += vetor1[i] + vetor2[j];
                     }
                 }
+            }
 
-
-        int[] resultado2 = new int[vetor02.length];
-                for (int i = 0; i < vetor02.length; i++) {
-                    vetor02[i] = 0;
-                    if (vetor02[i] % 2 != 0) {
-                        for (int j = 0; j < vetor01.length; i++) {
-                            if (vetor02[j] % 2 != 0 && vetor01[i] % vetor02[j] == 0) {
-                                resultado2[i]++;
-                            }
+        int[] resultado = new int[vetor1.length];
+            for (int i = 0; i < vetor1.length; i++) {
+                if (vetor1[i] % 2 != 0) {
+                    for (int j = 0; j < vetor2.length; j++) {
+                        if (vetor2[j] != 0 && vetor1[i] % vetor2[j] == 0) {
+                            resultado[i]++;
                         }
                     }
-                }
+                }        
+            }
 
-        System.out.println("Vetor Resultante 1: Soma de números pares do primeiro vetor com todos os números do segundo vetor");
-        for (int i = 0; i < resultado.length; i++) {
-            System.out.println("Elemento " + i + ": " + resultado[i]);
-        }
+        System.out.println("Primeiro vetor resultante:");
+            for (int i : resultado02) {
+                System.out.print(i + " ");
+            }
 
-        System.out.println("Vetor Resultante 2: Quantidade de divisores de números ímpares do primeiro vetor no segundo vetor");
-        for (int i = 0; i < resultado2.length; i++) {
-            System.out.println("Elemento " + i + ": " + resultado2[i]);
-        }
+        System.out.println("\nSegundo vetor resultante:");
+            for (int i : resultado) {
+                System.out.print(i + " ");
+            }
 
         input.close();
     }
